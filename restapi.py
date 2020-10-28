@@ -40,11 +40,9 @@ def create_project_and_repo(project_name, project_key, repo_name):
             project_key = project['key']
             bitbucket.create_repo(project_key, repo_name, forkable=False, is_private=True)
             # After creating the new repo, lets start the pipeline
-            #return jsonify(repo_name)
-            server.create_job('new_job', jenkins.EMPTY_CONFIG_XML)
-            my_job = server.get_job_config('cool-job')
-            
-
+            server.create_job(repo_name, jenkins.EMPTY_CONFIG_XML)
+               
+            return jsonify(repo_name)
     bitbucket.create_project(project_key, project_name)
     bitbucket.create_repo(project_key, repo_name, forkable=False, is_private=True)
     return jsonify(repo_name)
