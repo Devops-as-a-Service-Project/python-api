@@ -1,7 +1,7 @@
 from atlassian import Bitbucket
 import requests
 from flask import Flask, jsonify, request
-import jenkins
+from python-jenkins import jenkins
 
 bitbucket = Bitbucket(
     url='http://localhost:7990',
@@ -40,7 +40,7 @@ def create_project_and_repo(project_name, project_key, repo_name):
             project_key = project['key']
             bitbucket.create_repo(project_key, repo_name, forkable=False, is_private=True)
             # After creating the new repo, lets start the pipeline
-            server.create_job(repo_name, jenkins.EMPTY_CONFIG_XML)
+            #server.create_job(repo_name, jenkins.EMPTY_CONFIG_XML)
                
             return jsonify(repo_name)
     bitbucket.create_project(project_key, project_name)
