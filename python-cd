@@ -6,6 +6,7 @@ pipeline {
         registryCredential = "dockerhub"
         // create an environment to save docker image informations
         dockerImage = ''
+        GIT_URL = 'https://github.com/Devops-as-a-Service-Project/python-api.git'
    }
    
    
