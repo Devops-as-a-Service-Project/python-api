@@ -9,7 +9,7 @@ pipeline {
         dockerImage = ''
    }
 
-    agent none
+    agent any
    
     stages {
     
