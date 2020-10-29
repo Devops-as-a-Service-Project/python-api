@@ -1,7 +1,6 @@
 pipeline {
 
     environment {
-        CI = 'true'
         // Docker registry information
         registry = "amitmazor/daas-restapi"
         registryCredential = "dockerhub"

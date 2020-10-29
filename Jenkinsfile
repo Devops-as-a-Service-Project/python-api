@@ -23,8 +23,8 @@ pipeline {
 
           stage ('Invoke pipeline CD') {
             steps {
-                build job: 'pipeline-cd', parameters: [
-                string(name: 'pipeline-cd', value: "value1")
+                build job: 'python-cd', parameters: [
+                string(name: 'python-cd', value: "value1")
                 ]
             }
         }
