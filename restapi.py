@@ -1,7 +1,7 @@
 from atlassian import Bitbucket
 import requests
 from flask import Flask, jsonify, request
-from python-jenkins import jenkins
+import jenkins
 
 bitbucket = Bitbucket(
     url='http://localhost:7990',
@@ -50,7 +50,7 @@ def create_project_and_repo(project_name, project_key, repo_name):
 
 
 
-app.run(port=5000)
+app.run(port=5001)
  
 
 # #GET repository - #http://localhost:7990/rest/api/1.0/repos/?<name=test> 
